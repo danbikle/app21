@@ -1,0 +1,48 @@
+!!!
+%html(lang="en")
+  %head
+    %meta(content="text/html; charset=UTF-8" http-equiv="Content-Type")/
+    %meta(charset="utf-8")/
+    %title demo13, Un-Stacked Line
+    %script(src="/app/d3.v3.min.js")
+    %script(src="/app/rickshaw.min.js")
+  %body
+    %h1 app21/demo13, Un-Stacked Line
+    #refer
+      Refer to:
+      %br/
+      %a(href='http://code.shutterstock.com/rickshaw/' target='x')
+        http://code.shutterstock.com/rickshaw/
+      %br/
+      %a(href='http://code.shutterstock.com/rickshaw/guide/line-1.html' target='x')
+        http://code.shutterstock.com/rickshaw/guide/line-1.html
+    %hr/
+    / The div-element below should be affected by rickshaw.js
+    #rickshawchart
+    :javascript
+      var series1 = {
+        color: '#888888',
+        data: [ 
+          { x: 0, y: 40 }, 
+          { x: 1, y: 49 }, 
+          { x: 2, y: 38 }, 
+          { x: 3, y: 0 }, 
+          { x: 4, y: 2 } ]};
+      var series2 = {
+        color: '#DDDDDD',
+        data: [ 
+          { x: 0, y: 0 }, 
+          { x: 1, y: 9 }, 
+          { x: 2, y: 8 }, 
+          { x: 3, y: 30 }, 
+          { x: 4, y: 32 } ]};
+      var graph = new Rickshaw.Graph( {
+          preserve: true,
+          renderer: 'line',
+          element: document.querySelector("#rickshawchart"), 
+          width: 500, 
+          height: 200, 
+          series: [series1, series2]
+      });
+      graph.renderer.unstack = true;
+      graph.render();
