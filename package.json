@@ -1,0 +1,17 @@
+{
+  "name": "app21",
+  "version": "1.0.0",
+  "description": "Demo by Dan",
+  "main": "node_modules/http-server/bin/http-server",
+  "scripts": {
+    "test": "echo 'hello world' && exit"
+  },
+  "author": "Dan",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^0.8.5"
+  },
+  "engines": {
+    "node": "4.1.2"
+  }
+}
