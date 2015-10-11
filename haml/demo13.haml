@@ -16,6 +16,9 @@
       %br/
       %a(href='http://code.shutterstock.com/rickshaw/guide/area-3.html' target='x')
         http://code.shutterstock.com/rickshaw/guide/area-3.html
+      %br/
+      %a(href='https://github.com/shutterstock/rickshaw/issues/410' target='x')
+        https://github.com/shutterstock/rickshaw/issues/410
     %hr/
     / The div-element below should be affected by rickshaw.js
     #rickshawchart
@@ -26,14 +29,14 @@
           { x: 0, y: 40 }, 
           { x: 1, y: 49 }, 
           { x: 2, y: 38 }, 
-          { x: 3, y: 30 }, 
-          { x: 4, y: 32 } ]};
+          { x: 3, y: 0 }, 
+          { x: 4, y: 2 } ]};
       var series2 = {
         color: '#DDDDDD',
         data: [ 
-          { x: 0, y: 40 }, 
-          { x: 1, y: 49 }, 
-          { x: 2, y: 38 }, 
+          { x: 0, y: 0 }, 
+          { x: 1, y: 9 }, 
+          { x: 2, y: 8 }, 
           { x: 3, y: 30 }, 
           { x: 4, y: 32 } ]};
       var graph = new Rickshaw.Graph( {
