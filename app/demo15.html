@@ -3,12 +3,12 @@
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <meta charset="utf-8">
-    <title>demo14, Un-Stacked Line</title>
+    <title>demo15 Bars</title>
     <script src="/app/d3.v3.min.js"></script>
     <script src="/app/rickshaw.min.js"></script>
   </head>
   <body>
-    <h1>app21/demo14, Un-Stacked Line</h1>
+    <h1>app21/demo15 Bars</h1>
     <div id="refer">
       Refer to:
       <br>
@@ -16,8 +16,8 @@
         http://code.shutterstock.com/rickshaw/
       </a>
       <br>
-      <a href="http://code.shutterstock.com/rickshaw/guide/line-1.html" target="x">
-        http://code.shutterstock.com/rickshaw/guide/line-1.html
+      <a href="http://code.shutterstock.com/rickshaw/guide/bar-1.html" target="x">
+        http://code.shutterstock.com/rickshaw/guide/bar-1.html
       </a>
     </div>
     <hr>
@@ -25,30 +25,20 @@
     <div id="rickshawchart"></div>
     <script>
       var series1 = {
-        color: '#888888',
+        color: '#008800',
         data: [ 
           { x: 0, y: 40 }, 
           { x: 1, y: 49 }, 
           { x: 2, y: 38 }, 
           { x: 3, y: 4 }, 
           { x: 4, y: 6 } ]};
-      var series2 = {
-        color: '#222222',
-        data: [ 
-          { x: 0, y: 0 }, 
-          { x: 1, y: 9 }, 
-          { x: 2, y: 8 }, 
-          { x: 3, y: 30 }, 
-          { x: 4, y: 32 } ]};
       var graph = new Rickshaw.Graph( {
-          preserve: true,
-          renderer: 'line',
+          renderer: 'bar',
           element: document.querySelector("#rickshawchart"), 
           width: 500, 
           height: 200, 
-          series: [series1, series2]
+          series: [series1]
       });
-      graph.renderer.unstack = true;
       graph.render();
     </script>
   </body>
