@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta charset="utf-8">
+    <title>demo19 Legend</title>
+    <link href="/app/graph.css" rel="stylesheet" type="text/css">
+    <link href="/app/detail.css" rel="stylesheet" type="text/css">
+    <link href="/app/legend.css" rel="stylesheet" type="text/css">
+    <link href="/app/lines.css" rel="stylesheet" type="text/css">
+    <script src="/app/d3.v3.min.js"></script>
+    <script src="/app/d3.layout.min.js"></script>
+    <script src="/app/jquery.min.js"></script>
+    <script src="/app/jquery-ui.min.js"></script>
+    <script src="/app/rickshaw.min.js"></script>
+  </head>
+  <body>
+    <h1>app21/demo19 Legend</h1>
+    <div id="refer">
+      Refer to:
+      <br>
+      <a href="http://code.shutterstock.com/rickshaw/" target="x">
+        http://code.shutterstock.com/rickshaw/
+      </a>
+      <br>
+      <a href="http://code.shutterstock.com/rickshaw/examples/legend.html" target="x">
+        http://code.shutterstock.com/rickshaw/examples/legend.html
+      </a>
+    </div>
+    <hr>
+    <!-- The div-element below should be affected by rickshaw.js -->
+    <div id="chart_container">
+      <div id="chart"></div>
+      <div id="legend_container">
+        <div id="smoother" title="Smoothing"></div>
+        <div id="legend"></div>
+      </div>
+      <div id="slider"></div>
+    </div>
+    <script>
+      // set up our data series with 50 random data points
+      
+      var seriesData = [ [], [], [] ];
+      var random = new Rickshaw.Fixtures.RandomData(150);
+      
+      for (var i = 0; i < 150; i++) {
+      	random.addData(seriesData);
+      }
+      
+      // instantiate our graph!
+      
+      var graph = new Rickshaw.Graph( {
+      	element: document.getElementById("chart"),
+      	width: 960,
+      	height: 500,
+      	renderer: 'area',
+      	series: [
+      		{
+      			color: "#c05020",
+      			data: seriesData[0],
+      			name: 'New York'
+      		}, {
+      			color: "#30c020",
+      			data: seriesData[1],
+      			name: 'London'
+      		}, {
+      			color: "#6060c0",
+      			data: seriesData[2],
+      			name: 'Tokyo'
+      		}
+      	]
+      } );
+      
+      graph.render();
+      
+      var legend = new Rickshaw.Graph.Legend( {
+      	graph: graph,
+      	element: document.getElementById('legend')
+      
+      } );
+      
+      var shelving = new Rickshaw.Graph.Behavior.Series.Toggle( {
+      	graph: graph,
+      	legend: legend
+      } );
+      
+      var order = new Rickshaw.Graph.Behavior.Series.Order( {
+      	graph: graph,
+      	legend: legend
+      } );
+      
+      var highlight = new Rickshaw.Graph.Behavior.Series.Highlight( {
+      	graph: graph,
+      	legend: legend
+      } );
+    </script>
+  </body>
+</html>
