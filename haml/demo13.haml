@@ -21,7 +21,7 @@
         https://github.com/shutterstock/rickshaw/issues/410
     %hr/
     / The div-element below should be affected by rickshaw.js
-    #rickshawchart
+    #my_rickshawchart
     :javascript
       var series1 = {
         color: '#888888',
@@ -42,7 +42,7 @@
       var graph = new Rickshaw.Graph( {
           preserve: true,
           renderer: 'area',
-          element: document.querySelector("#rickshawchart"), 
+          element: document.querySelector("#my_rickshawchart"), 
           width: 500, 
           height: 200, 
           series: [series1, series2]

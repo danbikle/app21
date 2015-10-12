@@ -18,7 +18,7 @@
         http://code.shutterstock.com/rickshaw/guide/scatterplot-1.html
     %hr/
     / The div-element below should be affected by rickshaw.js
-    #rickshawchart
+    #my_rickshawchart
     :javascript
       var series1 = {
         color: '#0000FF',
@@ -45,7 +45,7 @@
       var graph = new Rickshaw.Graph( {
           renderer: 'scatterplot',
           stroke: true,
-          element: document.querySelector("#rickshawchart"), 
+          element: document.querySelector("#my_rickshawchart"), 
           width: 500, 
           height: 200, 
           series: [series1,series2]

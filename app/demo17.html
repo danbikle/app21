@@ -22,7 +22,7 @@
     </div>
     <hr>
     <!-- The div-element below should be affected by rickshaw.js -->
-    <div id="rickshawchart"></div>
+    <div id="my_rickshawchart"></div>
     <script>
       var series1 = {
         color: '#008800',
@@ -43,7 +43,7 @@
       var graph = new Rickshaw.Graph( {
           renderer: 'bar',
           stack: false,
-          element: document.querySelector("#rickshawchart"), 
+          element: document.querySelector("#my_rickshawchart"), 
           width: 500, 
           height: 200, 
           series: [series1,series2]
