@@ -3,9 +3,10 @@
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <meta charset="utf-8">
-    <title>demo21 under construction</title>
+    <title>demo21 Legend and Hover</title>
     <link href="/app/graph.css" rel="stylesheet" type="text/css">
     <link href="/app/detail.css" rel="stylesheet" type="text/css">
+    <link href="/app/legend.css" rel="stylesheet" type="text/css">
     <link href="/app/demo21.css" rel="stylesheet" type="text/css">
     <script src="/app/d3.v3.min.js"></script>
     <script src="/app/d3.layout.min.js"></script>
@@ -14,7 +15,7 @@
     <script src="/app/rickshaw.min.js"></script>
   </head>
   <body>
-    <h1>app21/demo21 under construction</h1>
+    <h1>app21/demo21 Legend and Hover</h1>
     <div id="refer">
       Refer to:
       <br>
@@ -29,10 +30,11 @@
     <hr>
     <!-- The div-element below should be affected by rickshaw.js -->
     <div id="my_rickshaw_chart_container">
-      <div id="my_rickshaw_chart"></div>
       <div id="legend_container">
         <div id="smoother" title="Smoothing"></div>
+        <div id="legend"></div>
       </div>
+      <div id="my_rickshaw_chart"></div>
     </div>
     <script>
       // set up our data series with 50 random data points
@@ -66,6 +68,14 @@
       graph.render();
       var hoverDetail = new Rickshaw.Graph.HoverDetail( {
       	graph: graph
+      } );
+      var legend = new Rickshaw.Graph.Legend( {
+      	graph: graph,
+      	element: document.getElementById('legend')
+      } );      
+      var shelving = new Rickshaw.Graph.Behavior.Series.Toggle( {
+      	graph: graph,
+      	legend: legend
       } );
     </script>
   </body>
