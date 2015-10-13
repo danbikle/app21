@@ -24,8 +24,8 @@
         http://code.shutterstock.com/rickshaw/examples/lines.html
     %hr/
     / The div-element below should be affected by rickshaw.js
-    #rickshaw_chart_container
-      #chart
+    #my_rickshaw_chart_container
+      #my_rickshaw_chart
       #legend_container
         #smoother(title="Smoothing")
     :javascript
@@ -37,7 +37,7 @@
       }
       // instantiate our graph!
       var graph = new Rickshaw.Graph( {
-      	element: document.getElementById("chart"),
+      	element: document.getElementById("my_rickshaw_chart"),
       	width: 960,
       	height: 500,
       	renderer: 'line',

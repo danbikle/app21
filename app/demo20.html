@@ -28,8 +28,8 @@
     </div>
     <hr>
     <!-- The div-element below should be affected by rickshaw.js -->
-    <div id="rickshaw_chart_container">
-      <div id="chart"></div>
+    <div id="my_rickshaw_chart_container">
+      <div id="my_rickshaw_chart"></div>
       <div id="legend_container">
         <div id="smoother" title="Smoothing"></div>
       </div>
@@ -43,7 +43,7 @@
       }
       // instantiate our graph!
       var graph = new Rickshaw.Graph( {
-      	element: document.getElementById("chart"),
+      	element: document.getElementById("my_rickshaw_chart"),
       	width: 960,
       	height: 500,
       	renderer: 'line',
