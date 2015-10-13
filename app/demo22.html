@@ -4,6 +4,7 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <meta charset="utf-8">
     <title>demo22 Slider</title>
+    <!-- Rickshaw RangeSlider needs jquery-ui.css -->
     <link href="/app/jquery-ui.css" rel="stylesheet" type="text/css">
     <link href="/app/graph.css" rel="stylesheet" type="text/css">
     <link href="/app/detail.css" rel="stylesheet" type="text/css">
@@ -12,6 +13,7 @@
     <script src="/app/d3.v3.min.js"></script>
     <script src="/app/d3.layout.min.js"></script>
     <script src="/app/jquery.min.js"></script>
+    <!-- Rickshaw RangeSlider needs jquery-ui.min.js -->
     <script src="/app/jquery-ui.min.js"></script>
     <script src="/app/rickshaw.min.js"></script>
   </head>
@@ -64,6 +66,7 @@
         ]
       } );
       graph.render();
+      // Rickshaw RangeSlider needs jquery-ui.css, jquery-ui.min.js
       var slider = new Rickshaw.Graph.RangeSlider({
           graph: graph,
           element: document.querySelector('#my_rickshaw_slider')
