@@ -3,9 +3,10 @@
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <meta charset="utf-8">
-    <title>demo20 Hover</title>
+    <title>demo21 under construction</title>
     <link href="/app/graph.css" rel="stylesheet" type="text/css">
     <link href="/app/detail.css" rel="stylesheet" type="text/css">
+    <link href="/app/demo21.css" rel="stylesheet" type="text/css">
     <script src="/app/d3.v3.min.js"></script>
     <script src="/app/d3.layout.min.js"></script>
     <script src="/app/jquery.min.js"></script>
@@ -13,7 +14,7 @@
     <script src="/app/rickshaw.min.js"></script>
   </head>
   <body>
-    <h1>app21/demo20 Hover</h1>
+    <h1>app21/demo21 under construction</h1>
     <div id="refer">
       Refer to:
       <br>
@@ -27,7 +28,12 @@
     </div>
     <hr>
     <!-- The div-element below should be affected by rickshaw.js -->
-    <div id="my_rickshaw_chart"></div>
+    <div id="my_rickshaw_chart_container">
+      <div id="my_rickshaw_chart"></div>
+      <div id="legend_container">
+        <div id="smoother" title="Smoothing"></div>
+      </div>
+    </div>
     <script>
       // set up our data series with 50 random data points
       var seriesData = [ [], [], [] ];

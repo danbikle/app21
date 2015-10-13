@@ -1,7 +1,7 @@
 div, span, p, td {
 	font-family: Arial, sans-serif;
 }
-#chart {
+#my_rickshaw_chart {
 	display: inline-block;
 }
 #legend {

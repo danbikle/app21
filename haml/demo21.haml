@@ -3,16 +3,17 @@
   %head
     %meta(content="text/html; charset=UTF-8" http-equiv="Content-Type")/
     %meta(charset="utf-8")/
-    %title demo20 Hover
+    %title demo21 under construction
     %link(href="/app/graph.css"  rel="stylesheet" type="text/css")/
     %link(href="/app/detail.css" rel="stylesheet" type="text/css")/
+    %link(href="/app/demo21.css"  rel="stylesheet" type="text/css")/
     %script(src="/app/d3.v3.min.js"    )
     %script(src="/app/d3.layout.min.js")
     %script(src="/app/jquery.min.js"   )
     %script(src="/app/jquery-ui.min.js")
     %script(src="/app/rickshaw.min.js" )
   %body
-    %h1 app21/demo20 Hover
+    %h1 app21/demo21 under construction
     #refer
       Refer to:
       %br/
@@ -23,7 +24,10 @@
         http://code.shutterstock.com/rickshaw/examples/lines.html
     %hr/
     / The div-element below should be affected by rickshaw.js
-    #my_rickshaw_chart
+    #my_rickshaw_chart_container
+      #my_rickshaw_chart
+      #legend_container
+        #smoother(title="Smoothing")
     :javascript
       // set up our data series with 50 random data points
       var seriesData = [ [], [], [] ];
