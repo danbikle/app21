@@ -3,7 +3,7 @@
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <meta charset="utf-8">
-    <title>demo22 Slider</title>
+    <title>demo23 Rickshaw.Graph.Ajax</title>
     <!-- Rickshaw RangeSlider needs jquery-ui.css -->
     <link href="/app/jquery-ui.css" rel="stylesheet" type="text/css">
     <link href="/app/graph.css" rel="stylesheet" type="text/css">
@@ -18,7 +18,7 @@
     <script src="/app/rickshaw.min.js"></script>
   </head>
   <body>
-    <h1>app21/demo22 Slider</h1>
+    <h1>app21/demo23 Rickshaw.Graph.Ajax</h1>
     <div id="refer">
       Refer to:
       <br>
@@ -26,52 +26,40 @@
         http://code.shutterstock.com/rickshaw/
       </a>
       <br>
-      <a href="http://code.shutterstock.com/rickshaw/examples/extensions.html" target="x">
-        http://code.shutterstock.com/rickshaw/examples/extensions.html
+      <a href="http://code.shutterstock.com/rickshaw/guide/ajax-1.html" target="x">
+        http://code.shutterstock.com/rickshaw/guide/ajax-1.html
       </a>
     </div>
     <hr>
     <!-- The div-element below should be affected by rickshaw.js -->
     <div id="my_rickshaw_chart_container">
       <div id="my_rickshaw_chart"></div>
-      <!-- element below depends on Rickshaw.Graph.RangeSlider() -->
-      <div id="my_rickshaw_slider"></div>
     </div>
     <script>
-      // set up our data series with 50 random data points
-      var seriesData = [ [], [], [] ];
-      var random = new Rickshaw.Fixtures.RandomData(150);
-      for (var i = 0; i < 150; i++) {
-        random.addData(seriesData);
-      }
-      // instantiate our graph!
-      var graph = new Rickshaw.Graph( {
+      new Rickshaw.Graph.Ajax( {
         element: document.getElementById("my_rickshaw_chart"),
-        width: 960,
-        height: 500,
+        width: 235,
+        height: 85,
         renderer: 'line',
+        dataURL: '/app/demo23data.json',
+        onData: function(d) { d[0].data[0].y = 80; return d },
+        onComplete: function(transport) {
+          var graph = transport.graph;
+          var detail = new Rickshaw.Graph.HoverDetail({ graph: graph });
+        },
         series: [
-                {
-                        color: "#c05020",
-                        data: seriesData[0],
-                        name: 'New York'
-                }, {
-                        color: "#30c020",
-                        data: seriesData[1],
-                        name: 'London'
-                }, {
-                        color: "#6060c0",
-                        data: seriesData[2],
-                        name: 'Tokyo'
-                }
+          {
+            name: 'New York',
+            color: '#c05020',
+          }, {
+            name: 'London',
+            color: '#30c020',
+          }, {
+            name: 'Tokyo',
+            color: '#6060c0'
+          }
         ]
       } );
-      graph.render();
-      // Rickshaw RangeSlider needs jquery-ui.css, jquery-ui.min.js
-      var slider = new Rickshaw.Graph.RangeSlider({
-          graph: graph,
-          element: document.querySelector('#my_rickshaw_slider')
-      });
     </script>
   </body>
 </html>

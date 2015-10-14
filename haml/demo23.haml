@@ -1,0 +1,57 @@
+!!!
+%html(lang="en")
+  %head
+    %meta(content="text/html; charset=UTF-8" http-equiv="Content-Type")/
+    %meta(charset="utf-8")/
+    %title demo23 Rickshaw.Graph.Ajax
+    / Rickshaw RangeSlider needs jquery-ui.css
+    %link(href="/app/jquery-ui.css" rel="stylesheet" type="text/css")/
+    %link(href="/app/graph.css"     rel="stylesheet" type="text/css")/
+    %link(href="/app/detail.css"    rel="stylesheet" type="text/css")/
+    %link(href="/app/legend.css"    rel="stylesheet" type="text/css")/
+    %link(href="/app/demo22.css"    rel="stylesheet" type="text/css")/
+    %script(src="/app/d3.v3.min.js"    )
+    %script(src="/app/d3.layout.min.js")
+    %script(src="/app/jquery.min.js"   )
+    / Rickshaw RangeSlider needs jquery-ui.min.js
+    %script(src="/app/jquery-ui.min.js")
+    %script(src="/app/rickshaw.min.js" )
+  %body
+    %h1 app21/demo23 Rickshaw.Graph.Ajax
+    #refer
+      Refer to:
+      %br/
+      %a(href='http://code.shutterstock.com/rickshaw/' target='x')
+        http://code.shutterstock.com/rickshaw/
+      %br/
+      %a(href='http://code.shutterstock.com/rickshaw/guide/ajax-1.html' target='x')
+        http://code.shutterstock.com/rickshaw/guide/ajax-1.html
+    %hr/
+    / The div-element below should be affected by rickshaw.js
+    #my_rickshaw_chart_container
+      #my_rickshaw_chart
+    :javascript
+      new Rickshaw.Graph.Ajax( {
+        element: document.getElementById("my_rickshaw_chart"),
+        width: 235,
+        height: 85,
+        renderer: 'line',
+        dataURL: '/app/demo23data.json',
+        onData: function(d) { d[0].data[0].y = 80; return d },
+        onComplete: function(transport) {
+          var graph = transport.graph;
+          var detail = new Rickshaw.Graph.HoverDetail({ graph: graph });
+        },
+        series: [
+          {
+            name: 'New York',
+            color: '#c05020',
+          }, {
+            name: 'London',
+            color: '#30c020',
+          }, {
+            name: 'Tokyo',
+            color: '#6060c0'
+          }
+        ]
+      } );
