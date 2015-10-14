@@ -3,6 +3,7 @@
   %head
     %meta(content="text/html; charset=UTF-8" http-equiv="Content-Type")/
     %title demo25 Axis
+    %link(href="/app/graph.css"     rel="stylesheet" type="text/css")/
     %script(src="/app/d3.v3.min.js")
     %script(src="/app/rickshaw.min.js")
   %body
@@ -15,20 +16,21 @@
       %br/
 
     %hr/
-    / The div-element below depends on rickshaw.min.js
-    #my_rickshawchart
+    #my_containter
+      / The div-element below depends on rickshaw.min.js
+      #my_rickshawchart
     :javascript
       var xval0   = 45 * 365 * 24 * 3600;
       var mydelta = 24 * 3600;
       var series1 = {
         color: '#0000FF',
         data: [ 
-          { x: (xval0+mydelta*0), y: 40.1 }, 
-          { x: (xval0+mydelta*1), y: 49.2 }, 
-          { x: (xval0+mydelta*2), y: 45.3 }, 
-          { x: (xval0+mydelta*3), y: 59.4 }, 
-          { x: (xval0+mydelta*4), y: 49.5 }, 
-          { x: (xval0+mydelta*5), y: 55.6 } ]};
+          { x: (xval0+mydelta*10), y: 40.1 }, 
+          { x: (xval0+mydelta*11), y: 49.2 }, 
+          { x: (xval0+mydelta*12), y: 45.3 }, 
+          { x: (xval0+mydelta*13), y: 59.4 }, 
+          { x: (xval0+mydelta*14), y: 49.5 }, 
+          { x: (xval0+mydelta*15), y: 55.6 } ]};
       var graph = new Rickshaw.Graph( {
           preserve: true,
           renderer: 'line',
@@ -37,4 +39,8 @@
           height: 200, 
           series: [series1]
       });
+      var xAxis = new Rickshaw.Graph.Axis.Time({
+          graph: graph
+      });
+      xAxis.render();
       graph.render();
