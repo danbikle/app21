@@ -2,12 +2,12 @@
 %html(lang="en")
   %head
     %meta(content="text/html; charset=UTF-8" http-equiv="Content-Type")/
-    %title demo25 Axis
-    %link(href="/app/graph.css"     rel="stylesheet" type="text/css")/
+    %title demo25 X-Axis
+    %link(href="/app/graph.css" rel="stylesheet" type="text/css")/
     %script(src="/app/d3.v3.min.js")
     %script(src="/app/rickshaw.min.js")
   %body
-    %h1 app21/demo25 Axis
+    %h1 app21/demo25 X-Axis
     #refer
       Refer to:
       %br/
@@ -20,8 +20,9 @@
       / The div-element below depends on rickshaw.min.js
       #my_rickshawchart
     :javascript
+      // Approx 45 yr converted to seconds:
       var xval0   = 45 * 365 * 24 * 3600;
-      var mydelta = 24 * 3600;
+      var mydelta = 24 * 3600; // 1 day
       var series1 = {
         color: '#0000FF',
         data: [ 

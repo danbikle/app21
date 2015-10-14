@@ -2,13 +2,13 @@
 <html lang="en">
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-    <title>demo25 Axis</title>
+    <title>demo25 X-Axis</title>
     <link href="/app/graph.css" rel="stylesheet" type="text/css">
     <script src="/app/d3.v3.min.js"></script>
     <script src="/app/rickshaw.min.js"></script>
   </head>
   <body>
-    <h1>app21/demo25 Axis</h1>
+    <h1>app21/demo25 X-Axis</h1>
     <div id="refer">
       Refer to:
       <br>
@@ -23,8 +23,9 @@
       <div id="my_rickshawchart"></div>
     </div>
     <script>
+      // Approx 45 yr converted to seconds:
       var xval0   = 45 * 365 * 24 * 3600;
-      var mydelta = 24 * 3600;
+      var mydelta = 24 * 3600; // 1 day
       var series1 = {
         color: '#0000FF',
         data: [ 
