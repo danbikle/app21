@@ -5,7 +5,7 @@
     %meta(charset="utf-8")/
     %title demo23 Rickshaw.Graph.Ajax
     / Rickshaw RangeSlider needs jquery-ui.css
-    %link(href="/app/jquery-ui.css" rel="stylesheet" type="text/css")/
+    / %link(href="/app/jquery-ui.css" rel="stylesheet" type="text/css")/
     %link(href="/app/graph.css"     rel="stylesheet" type="text/css")/
     %link(href="/app/detail.css"    rel="stylesheet" type="text/css")/
     %link(href="/app/legend.css"    rel="stylesheet" type="text/css")/
@@ -14,7 +14,7 @@
     %script(src="/app/d3.layout.min.js")
     %script(src="/app/jquery.min.js"   )
     / Rickshaw RangeSlider needs jquery-ui.min.js
-    %script(src="/app/jquery-ui.min.js")
+    / %script(src="/app/jquery-ui.min.js")
     %script(src="/app/rickshaw.min.js" )
   %body
     %h1 app21/demo23 Rickshaw.Graph.Ajax
@@ -26,6 +26,8 @@
       %br/
       %a(href='http://code.shutterstock.com/rickshaw/guide/ajax-1.html' target='x')
         http://code.shutterstock.com/rickshaw/guide/ajax-1.html
+      %br/
+      %a(href='/app/demo23data.json' target='j') /app/demo23data.json
     %hr/
     / The div-element below should be affected by rickshaw.js
     #my_rickshaw_chart_container
@@ -41,17 +43,4 @@
         onComplete: function(transport) {
           var graph = transport.graph;
           var detail = new Rickshaw.Graph.HoverDetail({ graph: graph });
-        },
-        series: [
-          {
-            name: 'New York',
-            color: '#c05020',
-          }, {
-            name: 'London',
-            color: '#30c020',
-          }, {
-            name: 'Tokyo',
-            color: '#6060c0'
-          }
-        ]
-      } );
+        }});
