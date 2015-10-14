@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <title>demo25 Axis</title>
+    <script src="/app/d3.v3.min.js"></script>
+    <script src="/app/rickshaw.min.js"></script>
+  </head>
+  <body>
+    <h1>app21/demo25 Axis</h1>
+    <div id="refer">
+      Refer to:
+      <br>
+      <a href="http://code.shutterstock.com/rickshaw/" target="x">
+        http://code.shutterstock.com/rickshaw/
+      </a>
+      <br>
+    </div>
+    <hr>
+    <!-- The div-element below depends on rickshaw.min.js -->
+    <div id="my_rickshawchart"></div>
+    <script>
+      var xval0   = 45 * 365 * 24 * 3600;
+      var mydelta = 24 * 3600;
+      var series1 = {
+        color: '#0000FF',
+        data: [ 
+          { x: (xval0+mydelta*0), y: 40.1 }, 
+          { x: (xval0+mydelta*1), y: 49.2 }, 
+          { x: (xval0+mydelta*2), y: 45.3 }, 
+          { x: (xval0+mydelta*3), y: 59.4 }, 
+          { x: (xval0+mydelta*4), y: 49.5 }, 
+          { x: (xval0+mydelta*5), y: 55.6 } ]};
+      var graph = new Rickshaw.Graph( {
+          preserve: true,
+          renderer: 'line',
+          element: document.querySelector("#my_rickshawchart"), 
+          width: 500, 
+          height: 200, 
+          series: [series1]
+      });
+      graph.render();
+    </script>
+  </body>
+</html>
