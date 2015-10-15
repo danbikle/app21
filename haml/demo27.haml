@@ -1,0 +1,57 @@
+!!!
+%html(lang="en")
+  %head
+    %meta(content="text/html; charset=UTF-8" http-equiv="Content-Type")/
+    %title demo27 X-Axis, Y-Axis
+    %link(href="/app/graph.css" rel="stylesheet" type="text/css")/
+    %script(src="/app/d3.v3.min.js")
+    %script(src="/app/rickshaw.min.js")
+  %body
+    #my_containter
+      #y_axis
+      #my_rickshawchart
+    %h1 app21/demo27 X-Axis, Y-Axis
+    #refer
+      Refer to:
+      %br/
+      %a(href='http://code.shutterstock.com/rickshaw/' target='x')
+        http://code.shutterstock.com/rickshaw/
+      %br/
+      %a(href='https://github.com/shutterstock/rickshaw/blob/master/examples/y_axis.html' target='x')
+        https://github.com/shutterstock/rickshaw/blob/master/examples/y_axis.html
+    %hr/
+    :css
+      #my_rickshawchart {position: relative;left: 40px;}
+      #y_axis {position: absolute;top: 0;bottom: 0;width: 40px;}
+    :javascript
+      // Approx 45 yr converted to seconds:
+      var xval0   = 45 * 365 * 24 * 3600;
+      var mydelta = 24 * 3600; // 1 day
+      var series1 = {
+        color: '#0000FF',
+        data: [ 
+          { x: (xval0+mydelta*10), y: 10.1 }, 
+          { x: (xval0+mydelta*11), y: 79.2 }, 
+          { x: (xval0+mydelta*12), y: 25.3 }, 
+          { x: (xval0+mydelta*13), y: 69.4 }, 
+          { x: (xval0+mydelta*14), y: 19.5 }, 
+          { x: (xval0+mydelta*15), y: 75.6 } ]};
+      var graph = new Rickshaw.Graph( {
+          renderer: 'line',
+          element: document.querySelector("#my_rickshawchart"), 
+          height: 300, 
+          width: 800,
+          series: [series1]
+      });
+      var xAxis = new Rickshaw.Graph.Axis.Time({
+          graph: graph
+      });
+      var yAxis = new Rickshaw.Graph.Axis.Y({
+          graph: graph,
+          element: document.getElementById('y_axis'),
+          tickFormat: Rickshaw.Fixtures.Number.formatKMBT,
+          orientation: 'left',
+      });
+      graph.render();
+      xAxis.render();
+      yAxis.render();
