@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <title>demo28 Y-Axis, tickFormat</title>
+    <link href="/app/graph.css" rel="stylesheet" type="text/css">
+    <link href="/app/lines.css" rel="stylesheet" type="text/css">
+    <script src="/app/d3.v3.min.js"></script>
+    <script src="/app/rickshaw.min.js"></script>
+    <style>
+      #my_rickshawchart {position: relative;left: 40px;}
+      #y_axis {position: absolute;top: 0;bottom: 0;width: 40px;}
+    </style>
+  </head>
+  <body>
+    <div id="my_containter">
+      <div id="y_axis"></div>
+      <div id="my_rickshawchart"></div>
+    </div>
+    <h1>app21/demo28 Y-Axis, tickFormat</h1>
+    <div id="refer">
+      Refer to:
+      <br>
+      <a href="http://code.shutterstock.com/rickshaw/" target="x">
+        http://code.shutterstock.com/rickshaw/
+      </a>
+      <br>
+      <a href="http://code.shutterstock.com/rickshaw/examples/y_axis.html" target="x">
+        http://code.shutterstock.com/rickshaw/examples/y_axis.html
+      </a>
+    </div>
+    <hr>
+    <script>
+      // instantiate our graph!
+      var graph = new Rickshaw.Graph( {
+        element: document.getElementById("my_rickshawchart"),
+        renderer: 'line',
+        height: 300,
+        width: 800,
+        series: [
+          {
+            data: [ { x: 0, y: 120 }, { x: 1, y: 890 }, { x: 2, y: 38 }, { x: 3, y: 70 }, { x: 4, y: 32 } ],
+            color: "#c05020"
+          }, {
+            data: [ { x: 0, y: 80 }, { x: 1, y: 200 }, { x: 2, y: 100 }, { x: 3, y: 520 }, { x: 4, y: 133 } ],
+            color: "#30c020"
+          }, {
+            data: [ { x: 0, y: 200 }, { x: 1, y: 390 }, { x: 2, y: 1000 }, { x: 3, y: 200 }, { x: 4, y: 230 } ],
+            color: "#6060c0"
+          }
+        ]
+      } );
+      var y_ticks = new Rickshaw.Graph.Axis.Y( {
+        graph: graph,
+        orientation: 'left',
+        tickFormat: Rickshaw.Fixtures.Number.formatKMBT,
+        element: document.getElementById('y_axis')
+      } );
+      graph.render();
+    </script>
+  </body>
+</html>
