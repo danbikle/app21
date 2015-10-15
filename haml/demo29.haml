@@ -2,13 +2,13 @@
 %html(lang="en")
   %head
     %meta(content="text/html; charset=UTF-8" http-equiv="Content-Type")/
-    %title demo28 Y-Axis, tickFormat
+    %title demo29 Y-Axis, tickFormat, X-Axis
     %link(href="/app/graph.css" rel="stylesheet" type="text/css")/
     %link(href="/app/lines.css" rel="stylesheet" type="text/css")/
     %script(src="/app/d3.v3.min.js")
     %script(src="/app/rickshaw.min.js")
   %body
-    %h1 app21/demo28 Y-Axis, tickFormat
+    %h1 app21/demo29 Y-Axis, tickFormat, X-Axis
     #refer
       Refer to:
       %br/
@@ -35,13 +35,13 @@
         series: [
           {
             data: [ { x: 0, y: 120 }, { x: 1, y: 890 }, { x: 2, y: 38 }, { x: 3, y: 70 }, { x: 4, y: 32 } ],
-            color: "#c05020"
+            color: "red"
           }, {
             data: [ { x: 0, y: 80 }, { x: 1, y: 200 }, { x: 2, y: 100 }, { x: 3, y: 520 }, { x: 4, y: 133 } ],
-            color: "#30c020"
+            color: "green"
           }, {
             data: [ { x: 0, y: 200 }, { x: 1, y: 390 }, { x: 2, y: 1000 }, { x: 3, y: 200 }, { x: 4, y: 230 } ],
-            color: "#6060c0"
+            color: "blue"
           }
         ]
       } );
@@ -51,4 +51,7 @@
         tickFormat: Rickshaw.Fixtures.Number.formatKMBT,
         element: document.getElementById('y_axis')
       } );
+      var xAxis = new Rickshaw.Graph.Axis.Time({
+          graph: graph
+      });
       graph.render();

@@ -7,16 +7,8 @@
     <link href="/app/lines.css" rel="stylesheet" type="text/css">
     <script src="/app/d3.v3.min.js"></script>
     <script src="/app/rickshaw.min.js"></script>
-    <style>
-      #my_rickshawchart {position: relative;left: 40px;}
-      #y_axis {position: absolute;top: 0;bottom: 0;width: 40px;}
-    </style>
   </head>
   <body>
-    <div id="my_containter">
-      <div id="y_axis"></div>
-      <div id="my_rickshawchart"></div>
-    </div>
     <h1>app21/demo28 Y-Axis, tickFormat</h1>
     <div id="refer">
       Refer to:
@@ -30,6 +22,15 @@
       </a>
     </div>
     <hr>
+    <div id="my_containter">
+      <div id="y_axis"></div>
+      <div id="my_rickshawchart"></div>
+    </div>
+    <style>
+      #my_containter    {position: relative;}
+      #my_rickshawchart {position: relative;left: 40px;}
+      #y_axis {position: absolute;top: 0;bottom: 0;width: 40px;}
+    </style>
     <script>
       // instantiate our graph!
       var graph = new Rickshaw.Graph( {

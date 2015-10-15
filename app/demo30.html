@@ -1,11 +1,11 @@
-!!!
-%html
-  %head
-    %link(href="/app/rickshaw.min.css" rel="stylesheet" type="text/css")/
-    %script(src="/app/vendor/d3.min.js"       )
-    %script(src="/app/vendor/d3.layout.min.js")
-    %script(src="/app/rickshaw.min.js"        )
-    :css
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="/app/rickshaw.min.css" rel="stylesheet" type="text/css">
+    <script src="/app/d3.v3.min.js"></script>
+    <script src="/app/d3.layout.min.js"></script>
+    <script src="/app/rickshaw.min.js"></script>
+    <style>
       #chart_container {
       	position: relative;
       	display: inline-block;
@@ -26,12 +26,15 @@
       	vertical-align: top;
       	margin: 0 0 0 10px;
       }
-  %body
-    #chart_container
-      #y_axis
-      #chart
-    #legend
-    :javascript
+    </style>
+  </head>
+  <body>
+    <div id="chart_container">
+      <div id="y_axis"></div>
+      <div id="chart"></div>
+    </div>
+    <div id="legend"></div>
+    <script>
       var palette = new Rickshaw.Color.Palette();
       
       var graph = new Rickshaw.Graph( {
@@ -77,3 +80,6 @@
       } );
       
       graph.render();
+    </script>
+  </body>
+</html>
