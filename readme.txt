@@ -37,9 +37,10 @@ echo 'export PATH="/home/ann/node/bin:${PATH}"' >> ~ann/.bashrc
 
 npm install -g coffee-script
 
+git clone https://github.com/danbikle/app21.git
 cd ~ann/app21
+npm install
 mkdir gems
-echo  gems >> .gitignore
 .  ~ann/app21/app21env.bash
 gem install haml
 
