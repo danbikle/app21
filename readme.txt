@@ -51,6 +51,30 @@ Try this shell command:
 
 ~ann/app21/http.bash
 
+Browse this URL:
+
+http://localhost:8080/demos.html
+
+The above URL should resemble the content served by this URL:
+
+https://dojo650.herokuapp.com/demos.html
+
+If you want to deploy this repository to Heroku, follow this outline:
+
+Register an account at heroku.com
+
+Download and install the Heroku Client
+
+Start a deployment shell, use the Heroku Client to login the shell
+
+Think of a short name for your app (I picked dojo650).
+
+Use the Heroku Client to create a blank Heroku App
+
+Run this shell command: git push heroku master
+
+Browse the URL of the app you just created.
+
 If you have questions, e-me.
 
 bikle101 at gmail
