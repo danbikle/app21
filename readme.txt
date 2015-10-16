@@ -28,9 +28,10 @@ useradd ann -m -s /bin/bash
 passwd ann
 ssh -YA ann@localhost
 cd ~ann
-wget https://nodejs.org/dist/v4.1.2/node-v4.1.2-linux-x64.tar.gz
-tar zxf node-v4.1.2-linux-x64.tar.gz
-mv node-v4.1.2-linux-x64 node
+rm -rf node
+wget https://nodejs.org/dist/v4.2.1/node-v4.2.1-linux-x64.tar.gz
+tar zxf node-v4.2.1-linux-x64.tar.gz
+mv node-v4.2.1-linux-x64 node
 
 export       PATH="/home/ann/node/bin:${PATH}"
 echo 'export PATH="/home/ann/node/bin:${PATH}"' >> ~ann/.bashrc
@@ -46,7 +47,7 @@ gem install haml
 
 Now you are ready to do Rickshaw development on your laptop.
 
-Try this:
+Try this shell command:
 
 ~ann/app21/http.bash
 
