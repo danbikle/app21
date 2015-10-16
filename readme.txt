@@ -61,19 +61,19 @@ https://dojo650.herokuapp.com/demos.html
 
 If you want to deploy this repository to Heroku, follow this outline:
 
-Register an account at heroku.com
+- Register an account at heroku.com
 
-Download and install the Heroku Client
+- Download and install the Heroku Client
 
-Start a deployment shell, use the Heroku Client to login the shell
+- Start a deployment shell, use the Heroku Client to login the shell
 
-Think of a short name for your app (I picked dojo650).
+- Think of a short name for your app (I picked dojo650).
 
-Use the Heroku Client to create a blank Heroku App
+- Use the Heroku Client to create a blank Heroku App
 
-Run this shell command: git push heroku master
+- Run this shell command: git push heroku master
 
-Browse the URL of the app you just created.
+- Browse the URL of the app you just created.
 
 If you have questions, e-me.
 
