@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-    <title>demo30 USA Census Data, Stacked</title>
-    <link href="/app/rickshaw.min.css" rel="stylesheet" type="text/css">
-    <script src="/app/d3.v3.min.js"></script>
-    <script src="/app/d3.layout.min.js"></script>
-    <script src="/app/rickshaw.min.js"></script>
-    <style>
+!!!
+%html(lang="en")
+  %head
+    %meta(content="text/html; charset=UTF-8" http-equiv="Content-Type")/
+    %title demo30 USA Census Data, Stacked
+    %link(href="/app/rickshaw.min.css" rel="stylesheet" type="text/css")/
+    %script(src="/app/d3.v3.min.js"    )
+    %script(src="/app/d3.layout.min.js")
+    %script(src="/app/rickshaw.min.js" )
+    :css
       #my_container {
         position: relative;
         display: inline-block;
@@ -28,36 +28,28 @@
         vertical-align: top;
         margin: 0 0 0 10px;
       }
-    </style>
-  </head>
-  <body>
-    <h1>app21/demo30 USA Census Data, Stacked</h1>
-    <div id="refer">
+  %body
+    %h1 app21/demo30 USA Census Data, Stacked
+    #refer
       Refer to:
-      <br>
-      <a href="http://code.shutterstock.com/rickshaw/tutorial/introduction.html#example_06" target="x">
+      %br/
+      %a(href='http://code.shutterstock.com/rickshaw/tutorial/introduction.html#example_06' target='x')
         http://code.shutterstock.com/rickshaw/tutorial/introduction.html#example_06
-      </a>
-      <br>
-      <a href="http://code.shutterstock.com/rickshaw/tutorial/example_06.html" target="x">
+      %br/
+      %a(href='http://code.shutterstock.com/rickshaw/tutorial/example_06.html' target='x')
         http://code.shutterstock.com/rickshaw/tutorial/example_06.html
-      </a>
-      <br>
-      <a href="https://github.com/shutterstock/rickshaw#rickshawcolorpalette" target="x">
+      %br/
+      %a(href='https://github.com/shutterstock/rickshaw#rickshawcolorpalette' target='x')
         https://github.com/shutterstock/rickshaw#rickshawcolorpalette
-      </a>
-      <br>
-      <a href="https://github.com/shutterstock/rickshaw/blob/master/examples/colors.html#L44" target="x">
+      %br/
+      %a(href='https://github.com/shutterstock/rickshaw/blob/master/examples/colors.html#L44' target='x')
         https://github.com/shutterstock/rickshaw/blob/master/examples/colors.html#L44
-      </a>
-    </div>
-    <hr>
-    <div id="my_container">
-      <div id="y_axis"></div>
-      <div id="my_rickshawchart"></div>
-    </div>
-    <div id="legend"></div>
-    <script>
+    %hr/
+    #my_container
+      #y_axis
+      #my_rickshawchart
+    #legend
+    :javascript
       var palette = new Rickshaw.Color.Palette();
       var graph = new Rickshaw.Graph( {
         element: document.querySelector("#my_rickshawchart"),
@@ -98,6 +90,3 @@
         graph: graph
       } );
       graph.render();
-    </script>
-  </body>
-</html>

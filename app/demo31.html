@@ -1,43 +1,56 @@
-!!!
-%html
-  %head
-    %link(href="/app/rickshaw.min.css" rel="stylesheet" type="text/css")/
-    %script(src="/app/vendor/d3.min.js"       )
-    %script(src="/app/vendor/d3.layout.min.js")
-    %script(src="/app/rickshaw.min.js"        )
-    :css
-      #chart_container {
-      	position: relative;
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <title>demo31 USA Census Data, Stacked-Lines Radio Buttons</title>
+    <link href="/app/rickshaw.min.css" rel="stylesheet" type="text/css">
+    <script src="/app/d3.v3.min.js"></script>
+    <script src="/app/d3.layout.min.js"></script>
+    <script src="/app/rickshaw.min.js"></script>
+    <style>
+      #my_container {
       	display: inline-block;
       	font-family: Arial, Helvetica, sans-serif;
       }
-      #chart {
-      	display: inline-block;
-      	margin-left: 40px;
-      }
-      #y_axis {
-      	position: absolute;
-      	top: 0;
-      	bottom: 0;
-      	width: 40px;
+      #my_rickshawchart {
+      	float: left;
       }
       #legend {
-      	display: inline-block;
-      	vertical-align: top;
-      	margin: 0 0 0 10px;
+      	float: left;
+      	margin-left: 15px;
       }
-  %body
-    #chart_container
-      #y_axis
-      #chart
-    #legend
-    :javascript
+      #offset_form {
+      	float: left;
+      	margin: 2em 0 0 15px;
+      	font-size: 13px;
+      }
+      #y_axis {
+      	float: left;
+      	width: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="my_container">
+      <div id="y_axis"></div>
+      <div id="my_rickshawchart"></div>
+      <div id="legend"></div>
+      <form class="toggler" id="offset_form">
+        <input checked="checked" id="lines" name="offset" type="radio" value="lines">
+        <label class="lines" for="lines">lines</label>
+        <br>
+        <input id="stack" name="offset" type="radio" value="zero">
+        <label class="stack" for="stack">stack</label>
+      </form>
+    </div>
+    <script>
       var palette = new Rickshaw.Color.Palette();
       
       var graph = new Rickshaw.Graph( {
-      	element: document.querySelector("#chart"),
-      	width: 550,
-      	height: 250,
+      	element: document.querySelector("#my_rickshawchart"),
+      	width: 540,
+      	height: 240,
+      	renderer: 'line',
       	series: [
       		{
       			name: "Northeast",
@@ -76,4 +89,23 @@
       	graph: graph
       } );
       
+      var offsetForm = document.getElementById('offset_form');
+      
+      offsetForm.addEventListener('change', function(e) {
+      	var offsetMode = e.target.value;
+      
+      	if (offsetMode == 'lines') {
+      		graph.setRenderer('line');
+      		graph.offset = 'zero';
+      	} else {
+      		graph.setRenderer('stack');
+      		graph.offset = offsetMode;
+      	}	
+      	graph.render();
+      
+      }, false);
+      
       graph.render();
+    </script>
+  </body>
+</html>

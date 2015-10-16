@@ -8,12 +8,12 @@
     %script(src="/app/d3.layout.min.js")
     %script(src="/app/rickshaw.min.js"        )
     :css
-      #chart_container {
+      #my_container {
         position: relative;
         display: inline-block;
         font-family: Arial, Helvetica, sans-serif;
       }
-      #chart {
+      #my_rickshawchart {
         display: inline-block;
         margin-left: 40px;
       }
@@ -45,14 +45,14 @@
       %a(href='https://github.com/shutterstock/rickshaw/blob/master/examples/colors.html#L44' target='x')
         https://github.com/shutterstock/rickshaw/blob/master/examples/colors.html#L44
     %hr/
-    #chart_container
+    #my_container
       #y_axis
-      #chart
+      #my_rickshawchart
     #legend
     :javascript
       var palette = new Rickshaw.Color.Palette();
       var graph = new Rickshaw.Graph( {
-        element: document.querySelector("#chart"),
+        element: document.querySelector("#my_rickshawchart"),
         width: 550,
         height: 250,
         series: [
