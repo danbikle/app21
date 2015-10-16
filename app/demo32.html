@@ -9,18 +9,16 @@
     <script src="/app/rickshaw.min.js"></script>
   </head>
   <body>
-    <div id="chart"></div>
-    <div id="slider"></div>
+    <div id="my_rickshawchart"></div>
+    <div id="rickshaw_slider"></div>
     <script>
       var seriesData = [ [], [] ];
       var random = new Rickshaw.Fixtures.RandomData(1500000);
-      
       for (var i = 0; i < 900; i++) {
       	random.addData(seriesData);
       }
-      
       var graph = new Rickshaw.Graph({
-      	element: document.getElementById("chart"),
+      	element: document.getElementById("my_rickshawchart"),
       	width: 960,
       	height: 500,
       	stroke: true,
@@ -33,25 +31,19 @@
       		{ color: '#99d4ee', data: seriesData[1] }
       	] 
       });
-      
       graph.render();
-      
       var xAxis = new Rickshaw.Graph.Axis.X({
       	graph: graph,
       	tickFormat: graph.x.tickFormat()
       });
-      
       xAxis.render();
-      
       var yAxis = new Rickshaw.Graph.Axis.Y({
       	graph: graph
       });
-      
       yAxis.render();
-      
       var slider = new Rickshaw.Graph.RangeSlider.Preview({
       	graph: graph,
-      	element: document.getElementById('slider')
+      	element: document.getElementById('rickshaw_slider')
       });
     </script>
   </body>
