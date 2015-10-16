@@ -1,0 +1,9 @@
+/home/ann/app21/meetup.txt
+
+The code challenge is still under construction.
+
+But, the code challenge will ask you to walk through the steps I used to create this repository:
+
+https://github.com/danbikle/app21
+
+Questions? e-me: bikle101 at gmail
