@@ -10,7 +10,7 @@ Currently, this repository is deployed at this URL:
 
 https://dojo650.herokuapp.com/demos.html
 
-To run this repository on my laptop I follow these steps:
+To run this repository on my Ubuntu laptop I follow these steps:
 
 apt-get update
 apt-get upgrade
