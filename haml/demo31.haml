@@ -29,6 +29,25 @@
       	width: 40px;
       }
   %body
+    %h1 app21/demo31 USA Census Data, Stacked-Lines Radio Buttons
+    #refer
+      Refer to:
+      %br/
+      %a(href='http://code.shutterstock.com/rickshaw/tutorial/introduction.html#example_06' target='x')
+        http://code.shutterstock.com/rickshaw/tutorial/introduction.html#example_06
+      %br/
+      %a(href='http://code.shutterstock.com/rickshaw/tutorial/example_06.html' target='x')
+        http://code.shutterstock.com/rickshaw/tutorial/example_06.html
+      %br/
+      %a(href='https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener' target='x')
+        https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+      %br/
+      %a(href='https://developer.mozilla.org/en-US/docs/Web/API/Event/type' target='x')
+        https://developer.mozilla.org/en-US/docs/Web/API/Event/type
+      %br/
+      %a(href='http://www.w3schools.com/jsref/met_document_addeventlistener.asp' target='x')
+        http://www.w3schools.com/jsref/met_document_addeventlistener.asp
+    %hr/
     #my_container
       #y_axis
       #my_rickshawchart
@@ -41,7 +60,6 @@
         %label.stack(for="stack") stack
     :javascript
       var palette = new Rickshaw.Color.Palette();
-      
       var graph = new Rickshaw.Graph( {
       	element: document.querySelector("#my_rickshawchart"),
       	width: 540,
@@ -70,26 +88,20 @@
       		}
       	]
       } );
-      
       var x_axis = new Rickshaw.Graph.Axis.Time( { graph: graph } );
-      
       var y_axis = new Rickshaw.Graph.Axis.Y( {
       	graph: graph,
       	orientation: 'left',
       	tickFormat: Rickshaw.Fixtures.Number.formatKMBT,
       	element: document.getElementById('y_axis'),
       } );
-      
       var legend = new Rickshaw.Graph.Legend( {
       	element: document.querySelector('#legend'),
       	graph: graph
       } );
-      
       var offsetForm = document.getElementById('offset_form');
-      
       offsetForm.addEventListener('change', function(e) {
       	var offsetMode = e.target.value;
-      
       	if (offsetMode == 'lines') {
       		graph.setRenderer('line');
       		graph.offset = 'zero';
@@ -98,7 +110,5 @@
       		graph.offset = offsetMode;
       	}	
       	graph.render();
-      
       }, false);
-      
       graph.render();
