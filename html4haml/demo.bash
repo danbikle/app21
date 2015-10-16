@@ -5,6 +5,6 @@
 cd ~ann/app21/html4haml/
 
 . ~ann/app21/app21env.bash
-~ann/app21/gems/bin/html2haml --html-attributes ~ann/app21/html4haml/demo32.html ~ann/app21/haml/temp.haml
+~ann/app21/gems/bin/html2haml --html-attributes ~ann/app21/html4haml/demo33.html ~ann/app21/haml/temp.haml
 
 exit

@@ -1,0 +1,55 @@
+!!!
+%html(lang="en")
+  %head
+    %meta(content="text/html; charset=UTF-8" http-equiv="Content-Type")/
+    %title demo33 Rickshaw.Graph.Ajax
+    %link(href="/app/rickshaw.min.css" rel="stylesheet" type="text/css")/
+    %script(src="/app/jquery.min.js")
+    %script(src="/app/d3.v3.min.js")
+    %script(src="/app/rickshaw.min.js")
+  %body
+    %h1 demo33 Rickshaw.Graph.Ajax
+    #refer
+      Refer to:
+      %br/
+      %a(href='https://github.com/shutterstock/rickshaw/blob/master/src/js/Rickshaw.Graph.Ajax.js' target='x')
+        https://github.com/shutterstock/rickshaw/blob/master/src/js/Rickshaw.Graph.Ajax.js
+      %br/
+      %a(href='https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener' target='x')
+        https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+      %br/
+      %a(href='https://developer.mozilla.org/en-US/docs/Web/API/Event/type' target='x')
+        https://developer.mozilla.org/en-US/docs/Web/API/Event/type
+      %br/
+      %a(href='http://www.w3schools.com/jsref/met_document_addeventlistener.asp' target='x')
+        http://www.w3schools.com/jsref/met_document_addeventlistener.asp
+    %hr/
+    / The div below depends on rickshaw.min.js
+    #my_container
+      #my_rickshawchart
+      %button#refresh refresh
+    :javascript
+      var dataURLs = ['/app/demo33data0.json', '/app/demo33data1.json'];
+      var ajaxGraph = new Rickshaw.Graph.Ajax( {
+      	element: document.getElementById("my_rickshawchart"),
+      	width: 400,
+      	height: 200,
+      	renderer: 'line',
+      	dataURL: '/app/demo33data0.json',
+      	series: [
+      		{
+      			name: 'New York',
+      			color: '#c05020',
+      		}, {
+      			name: 'London',
+      			color: '#30c020',
+      		}, {
+      			name: 'Tokyo',
+      			color: '#6060c0'
+      		}
+      	]
+      } );      
+      document.querySelector('#refresh').addEventListener('click', function() {
+      	ajaxGraph.dataURL = ajaxGraph.dataURL === dataURLs[0] ? dataURLs[1] : dataURLs[0];
+      	ajaxGraph.request();
+      });
