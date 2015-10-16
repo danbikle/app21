@@ -8,7 +8,7 @@ The main topic of the class is using Rickshaw to visualize time series data.
 
 Currently, this repository is deployed at this URL:
 
-https://dojo650.herokuapp.com
+https://dojo650.herokuapp.com/demos.html
 
 To run this repository on my laptop I follow these steps:
 
